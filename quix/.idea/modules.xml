@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/quix.iml" filepath="$PROJECT_DIR$/quix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quix-i18n/quix-i18n.iml" filepath="$PROJECT_DIR$/quix-i18n/quix-i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quix-model/quix-model.iml" filepath="$PROJECT_DIR$/quix-model/quix-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quix-repo/quix-repo.iml" filepath="$PROJECT_DIR$/quix-repo/quix-repo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quix-service/quix-service.iml" filepath="$PROJECT_DIR$/quix-service/quix-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quix-webapp/quix-webapp.iml" filepath="$PROJECT_DIR$/quix-webapp/quix-webapp.iml" />
+    </modules>
+  </component>
+</project>
