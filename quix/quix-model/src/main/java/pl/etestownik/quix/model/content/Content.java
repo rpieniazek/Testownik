@@ -33,5 +33,4 @@ public class Content {
 	@Getter
 	@Setter
 	private String text;	
-
 }

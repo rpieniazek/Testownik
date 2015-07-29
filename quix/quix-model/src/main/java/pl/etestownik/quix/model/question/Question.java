@@ -39,8 +39,8 @@ public class Question {
 	
 	@Getter
 	@Setter
-	@OneToOne(fetch = FetchType.LAZY, targetEntity = Content.class)
-	@PrimaryKeyJoinColumn(name = "id_content")
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id_content")
 	private Content content;
 	
 	@Getter
