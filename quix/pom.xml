@@ -26,7 +26,7 @@
 				<jdbc.username>user_testownik</jdbc.username>
 				<jdbc.password>michalaibinkurwa</jdbc.password>
 				<jdbc.hibernate.dialect>org.hibernate.dialect.MySQLDialect</jdbc.hibernate.dialect>
-				<jdbc.hibernate.hbm2ddl.auto>update</jdbc.hibernate.hbm2ddl.auto>
+				<jdbc.hibernate.hbm2ddl.auto>create</jdbc.hibernate.hbm2ddl.auto>
 				<log4j.filepath.basedir/>
 				<log4j.console.treshold>OFF</log4j.console.treshold>
 				<log4j.i18n.treshold>DEBUG</log4j.i18n.treshold>
