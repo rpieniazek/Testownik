@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03197c2f-110d-4756-baf7-e9ba7ce98cb1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quix-webapp/src/main/java/pl/etestownik/controller/quiz/QuizController.java" afterPath="$PROJECT_DIR$/quix-webapp/src/main/java/pl/etestownik/controller/quiz/QuizController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quix-service/src/main/java/pl/etestownik/quix/service/quiz/impl/QuizService.java" afterPath="$PROJECT_DIR$/quix-service/src/main/java/pl/etestownik/quix/service/quiz/impl/QuizService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quix-webapp/src/main/webapp/pages/add-quiz.html" afterPath="$PROJECT_DIR$/quix-webapp/src/main/webapp/pages/add-quiz.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-i18n/target/classes/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-i18n/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-i18n/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-i18n/target/quix-i18n-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-model/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-model/target/quix-model-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-repo/target/classes/jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-repo/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-repo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-repo/target/quix-repo-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-service/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-service/target/quix-service-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/quix-webapp-1.0-SNAPSHOT.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/quix-webapp-1.0-SNAPSHOT/WEB-INF/lib/quix-model-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/quix-webapp-1.0-SNAPSHOT/WEB-INF/lib/quix-repo-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/quix-webapp/target/quix-webapp-1.0-SNAPSHOT/WEB-INF/lib/quix-service-1.0-SNAPSHOT.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quix.iws" />
@@ -33,10 +50,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QuizService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QuizService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quix-service/src/main/java/pl/etestownik/quix/service/quiz/impl/QuizService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52696455">
+            <state vertical-scroll-proportion="-12.214286">
               <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
                 <element signature="e#836#837#0" expanded="true" />
@@ -66,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuizController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QuizController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quix-webapp/src/main/java/pl/etestownik/controller/quiz/QuizController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.50516987">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
               <folding>
                 <element signature="e#697#698#0" expanded="true" />
                 <element signature="e#721#722#0" expanded="true" />
@@ -1148,7 +1165,7 @@
       <option name="number" value="Default" />
       <updated>1438204140855</updated>
       <workItem from="1438204145458" duration="1089000" />
-      <workItem from="1438205362889" duration="2041000" />
+      <workItem from="1438205362889" duration="2569000" />
     </task>
     <task id="LOCAL-00001" summary="simple form">
       <created>1438206474691</created>
@@ -1160,10 +1177,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3130000" />
+    <option name="totallyTimeSpent" value="3658000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="25" width="1922" height="1055" extended-state="6" />
+    <frame x="1919" y="25" width="1922" height="1055" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1376,17 +1393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quix-webapp/src/main/java/pl/etestownik/controller/quiz/QuizController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quix-webapp/src/main/webapp/WEB-INF/context-properties.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1437,11 +1443,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quix-service/src/main/java/pl/etestownik/quix/service/quiz/impl/QuizService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52696455">
+        <state vertical-scroll-proportion="-12.214286">
           <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="e#836#837#0" expanded="true" />
             <element signature="e#862#863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quix-webapp/src/main/java/pl/etestownik/controller/quiz/QuizController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50516987">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
           </folding>
         </state>
       </provider>
