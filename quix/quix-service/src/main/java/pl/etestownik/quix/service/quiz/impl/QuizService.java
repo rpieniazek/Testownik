@@ -12,6 +12,8 @@ import pl.etestownik.quix.model.quiz.Quiz;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
 import pl.etestownik.quix.service.quiz.IQuizService;
 
+import javax.transaction.Transactional;
+
 @Service
 public class QuizService implements IQuizService{
 
@@ -26,7 +28,8 @@ public class QuizService implements IQuizService{
 	
 	@Autowired
 	private IBaseRepo<Content> contentRepo;
-	
+
+	@Transactional
 	public void save(Quiz quiz) {
 		quizRepo.save(quiz);
 	}

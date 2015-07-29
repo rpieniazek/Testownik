@@ -17,13 +17,13 @@ public class QuizController {
 	@Autowired
 	private IQuizService quizService;
 
-	@RequestMapping(value = { "/quiz/new" }, method = {RequestMethod.POST, RequestMethod.GET})
-	public String newQuiz(@ModelAttribute("quiz") Quiz quiz){
+	@RequestMapping(value = { "/quiz/new" }, method = RequestMethod.GET)
+	public String newQuiz(@ModelAttribute("quiz") Quiz quiz) {
 		return "add-quiz";
 	}
 
 	@RequestMapping(value = { "/quiz/save" }, method = {RequestMethod.POST, RequestMethod.GET})
-	public String saveQuiz(@ModelAttribute("quiz") Quiz quiz){
+	public String saveQuiz(@ModelAttribute("quiz") Quiz quiz) {
 		quizService.save(quiz);
 		return "add-quiz";
 	}
