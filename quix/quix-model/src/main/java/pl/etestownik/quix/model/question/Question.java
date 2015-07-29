@@ -40,7 +40,7 @@ public class Question {
 	@Getter
 	@Setter
 	@OneToOne(fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
+	@JoinColumn(name="id_content")
 	private Content content;
 	
 	@Getter

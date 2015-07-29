@@ -34,9 +34,9 @@ public class Content {
 	@Setter
 	private String text;	
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "content", cascade = CascadeType.ALL)
-	private Answer answer;
-	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "content", cascade = CascadeType.ALL)
-	private Question question;
+//	@OneToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+//	private Answer answer;
+//	
+//	@OneToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+//	private Question question;
 }
