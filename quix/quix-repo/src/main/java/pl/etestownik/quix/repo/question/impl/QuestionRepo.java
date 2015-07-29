@@ -5,10 +5,12 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.stereotype.Repository;
 import pl.etestownik.quix.model.question.Question;
 import pl.etestownik.quix.model.quiz.Quiz;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
 
+@Repository
 public class QuestionRepo implements IBaseRepo<Question> {
 
 	@Autowired

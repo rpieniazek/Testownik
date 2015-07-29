@@ -40,6 +40,7 @@ public class Quiz {
 	@Setter
 	@OneToMany(mappedBy = "quiz", targetEntity = Question.class, cascade = CascadeType.ALL)
 	private Set<Question> questions;
-	
+
+	public Quiz(){}
 	//TODO: User
 }

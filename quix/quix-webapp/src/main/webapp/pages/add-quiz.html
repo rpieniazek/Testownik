@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Testowa forma</title>
+</head>
+<body>
+<form role="form" action="#" th:action="@{/quiz/save}" th:object="${quiz}" method="post">
+
+    <!-- Nazwa -->
+    <div>
+        <label>Nazwa quizu</label>
+        <input type="text" th:field="*{name}" placeholder="Wpisz tu cos"></input>
+    </div>
+
+    <input type="submit" value="Dodaj" />
+
+</form>
+</body>
+</html>
