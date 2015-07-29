@@ -31,6 +31,7 @@ public class Answer {
 	private boolean isCorrect;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id_question")
 	private Question question;
 	
 	@Getter
