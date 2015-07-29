@@ -1,6 +1,0 @@
-127.0.0.1 - - [28/Jul/2015:13:42:00 +0200] "GET / HTTP/1.1" 500 17531 http-bio-8070-exec-1 939
-127.0.0.1 - - [28/Jul/2015:13:42:01 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8070-exec-2 59
-127.0.0.1 - - [28/Jul/2015:13:42:01 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8070-exec-4 9
-127.0.0.1 - - [28/Jul/2015:13:42:47 +0200] "GET / HTTP/1.1" 200 109 http-bio-8070-exec-5 39
-127.0.0.1 - - [28/Jul/2015:13:42:47 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8070-exec-8 24
-127.0.0.1 - - [28/Jul/2015:13:42:47 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8070-exec-9 6

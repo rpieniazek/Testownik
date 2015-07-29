@@ -6,7 +6,7 @@ Thumbs.db
 ehthumbs.db
 
 coop-*
-
+/target/*
 # Folder config file
 Desktop.ini
 

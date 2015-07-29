@@ -33,10 +33,13 @@ public class Content {
 	@Getter
 	@Setter
 	private String text;	
+<<<<<<< HEAD
 	
 //	@OneToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
 //	private Answer answer;
 //	
 //	@OneToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
 //	private Question question;
+=======
+>>>>>>> bdfaec72ea60d4a593f72bb5318600753b7df19f
 }

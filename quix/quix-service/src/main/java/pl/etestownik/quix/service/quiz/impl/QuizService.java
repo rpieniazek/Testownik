@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import pl.etestownik.quix.model.quiz.Quiz;
+import pl.etestownik.quix.repo.quiz.IQuizRepo;
 import pl.etestownik.quix.service.quiz.IQuizService;
-import pl.etestownik.repo.quiz.impl.IQuizRepo;
 
 public class QuizService implements IQuizService{
 
