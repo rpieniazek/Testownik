@@ -15,7 +15,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="evelan" password="123456" authorities="ROLE_USER" />
+				<user name="evelan" password="123456" authorities="ROLE_ADMIN" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>

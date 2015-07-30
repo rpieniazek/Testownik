@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Log4j
 public class HomeController {
 
-	@RequestMapping(value = { "", "/" })
+	@RequestMapping(value = { "admin", "/admin/" })
 	public String home() {
-		log.info("test");
+		return "/admin/index";
+	}
+
+	@RequestMapping(value = { "", "/" })
+	public String landingPage() {
 		return "index";
 	}
 	
