@@ -4,15 +4,26 @@
 <title>Testowa forma</title>
 </head>
 <body>
-<form action="#" th:action="@{/quiz/save}" th:object="${quiz}" method="post">
+<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}" method="post">
 
-    <!-- Nazwa -->
+    <!-- NazwaQuizu -->
     <div>
         <label>Nazwa quizu</label>
         <input type="text" th:field="*{name}" placeholder="Wpisz tu cos"></input>
     </div>
 
-    <input type="submit" value="Dodaj" />
+	 <!-- Pytanie -->
+	 <!-- Odpowiedz1 -->
+	 <!-- Odpowiedz2 -->
+	 <!-- Odpowiedz3 -->
+    <div>
+        <label>Nazwa quizu</label>
+        <input type="text" th:field="*{name}" placeholder="Wpisz tu cos"></input>
+    </div>
+    
+   
+
+	<input type="submit" value="Dodaj" />
 
 </form>
 </body>

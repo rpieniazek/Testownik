@@ -1,10 +1,11 @@
 package pl.etestownik.quix.service.quiz.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
+
 import pl.etestownik.quix.model.answer.Answer;
 import pl.etestownik.quix.model.content.Content;
 import pl.etestownik.quix.model.question.Question;
@@ -33,21 +34,20 @@ public class QuizService implements IQuizService{
 	public void save(Quiz quiz) {
 		quizRepo.save(quiz);
 	}
-
+	
 	public void delete(Quiz quiz) {
 		quizRepo.delete(quiz);
 	}
 
-	public List<Quiz> findAll() {
-		return quizRepo.findAll();
-	}
-	
 	public void update(Quiz entity) {
 		quizRepo.update(entity);
 	}
-
+	
 	public Quiz getById(long id) {
 		return quizRepo.getById(id);
 	}
-
+	
+	public List<Quiz> findAll() {
+		return quizRepo.findAll();
+	}
 }
