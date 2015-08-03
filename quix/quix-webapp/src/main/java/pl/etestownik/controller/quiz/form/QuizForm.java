@@ -1,9 +1,12 @@
 package pl.etestownik.controller.quiz.form;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.etestownik.quix.model.answer.Answer;
+import pl.etestownik.quix.model.question.Question;
 import pl.etestownik.quix.model.quiz.Quiz;
 
 public class QuizForm {
@@ -12,8 +15,8 @@ public class QuizForm {
 	private Quiz quiz;
 	
 	@Getter @Setter
-	private String  question;
+	private Question  question;
 	
 	@Getter @Setter
-	private Set<String> answer;
+	private ArrayList<Answer> answers;
 }

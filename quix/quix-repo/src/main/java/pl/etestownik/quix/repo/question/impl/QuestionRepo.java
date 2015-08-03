@@ -18,6 +18,7 @@ public class QuestionRepo implements IBaseRepo<Question> {
 	@Override
 	public void save(Question entity) {
 		session.getCurrentSession().save(entity);
+		session.getCurrentSession().flush();
 	}
 
 	@Override

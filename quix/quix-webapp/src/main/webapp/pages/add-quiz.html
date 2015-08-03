@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Testowa forma</title>
+	
+	<title>Dodawanie Pytania</title>
+
+	<script th:src="@{/js/addAnswer.js}"></script>
 </head>
 <body>
-<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}" method="post">
 
-    <!-- NazwaQuizu -->
-    <div>
-        <label>Nazwa quizu</label>
-        <input type="text" th:field="*{name}" placeholder="Wpisz tu cos"></input>
-    </div>
+	<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}"
+		method="post">
 
-	 <!-- Pytanie -->
-	 <!-- Odpowiedz1 -->
-	 <!-- Odpowiedz2 -->
-	 <!-- Odpowiedz3 -->
-    <div>
-        <label>Nazwa quizu</label>
-        <input type="text" th:field="*{name}" placeholder="Wpisz tu cos"></input>
-    </div>
-    
-   
+		<!-- NazwaQuizu -->
+		<div>
+			<label>Nazwa quizu</label> <input type="text" th:field="*{quiz.name}"
+				placeholder="Wpisz tu cos"></input>
+		</div>
 
-	<input type="submit" value="Dodaj" />
+		<!-- Pytanie -->
+		<div>
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{question.content.text}" placeholder="Wpisz tu pytanie"></input>
+		</div>
+		<div th:each="answer : ${answers}">
+		<!-- Odpowiedz1 -->
+			
+			<div id="answer+index" style="display: none;">
+			 	<label>Odpowiedź:</label> <input type="text"
+					th:field="*{answer.content.text}" placeholder="Odpowiedź">
+				</input> 
+			</div>
+	</div>
+		 <!--  
+		<div id="answer2" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+			
+		</div>
+		<div id="answer3" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+		</div>
+		
+		<div id="answer4" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+		</div>
 
-</form>
+ -->
+		<input id="addAnswerButton" type="button" value="+"
+			onclick="counter++; addAnswer('answer');" /> 
+			
+		<input type="submit" value="Dodaj" />
+
+	</form>
 </body>
 </html>

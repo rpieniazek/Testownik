@@ -2,6 +2,8 @@ package pl.etestownik.quix.service.question.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,7 @@ public class QuestionService implements IQuestionService {
 	@Autowired
 	private IBaseRepo<Question> questionRepo;
 
-	@Override
+	@Transactional
 	public void save(Question question) {
 		questionRepo.save(question);
 	}
