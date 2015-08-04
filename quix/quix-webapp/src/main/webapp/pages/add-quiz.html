@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorator="template">
 <head>
-	
-	<title>Dodawanie Pytania</title>
 
-	<script th:src="@{/js/addAnswer.js}"></script>
+<title>Dodawanie Pytania</title>
+
+<script th:src="@{/../js/addAnswer.js}"></script>
 </head>
 <body>
-
+	<div class="main-container" layout:fragment="content">
 	<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}"
 		method="post">
 
@@ -23,15 +25,15 @@
 				th:field="*{question.content.text}" placeholder="Wpisz tu pytanie"></input>
 		</div>
 		<div th:each="answer : ${answers}">
-		<!-- Odpowiedz1 -->
-			
+			<!-- Odpowiedz1 -->
+
 			<div id="answer+index" style="display: none;">
-			 	<label>Odpowiedź:</label> <input type="text"
+				<label>Odpowiedź:</label> <input type="text"
 					th:field="*{answer.content.text}" placeholder="Odpowiedź">
-				</input> 
+				</input>
 			</div>
-	</div>
-		 <!--  
+		</div>
+		<!--  
 		<div id="answer2" style="display: none;">
 			<label>Pytanie:</label> <input type="text"
 				th:field="*{answer.content.text}" placeholder="Odpowiedź">
@@ -52,10 +54,10 @@
 
  -->
 		<input id="addAnswerButton" type="button" value="+"
-			onclick="counter++; addAnswer('answer');" /> 
-			
-		<input type="submit" value="Dodaj" />
+			onclick="counter++; addAnswer('answer');" /> <input type="submit"
+			value="Dodaj" />
 
 	</form>
+	</div>
 </body>
 </html>
