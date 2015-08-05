@@ -15,7 +15,7 @@ import lombok.Setter;
 
 @Entity
 /* uniqueConstraint - żeby nie było dwóch rekordów z tym samym userem i rolą */
-@Table(name = "user_roles", uniqueConstraints = @UniqueConstraint(columnNames = {"user","role"}))
+@Table(name = "user_roles", uniqueConstraints = @UniqueConstraint(columnNames = {"username","role"}))
 public class UserRole {
 
 	@Id

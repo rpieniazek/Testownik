@@ -47,6 +47,6 @@ public class User {
 	
 	@Getter
 	@Setter
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", targetEntity = UserRole.class)
 	private Set userRole = new HashSet(0);
 }
