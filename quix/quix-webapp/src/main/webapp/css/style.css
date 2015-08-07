@@ -131,8 +131,8 @@ input {
 }
 
 .subscribe-input {
-	float: left;
-	width: 65%;
+	float: center;
+	width: 100%;
 	text-align: left;
 	margin-right: 2px;
 }
@@ -153,12 +153,14 @@ input {
 
 /*Buttons Configuration */
 .btn-conf {
+      font-weight: bold;
+    width: 40%;
 	border-radius: 50px;
 	margin-right: 15px;
-	font-size: 11px;
+	font-size: 15px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	padding: 18px 28px 17px 28px;
+	padding: 17px 28px 17px 28px;
 	}
 
 .btn-conf-2 {
@@ -179,11 +181,11 @@ input {
 /* HEADER SECTION */
 #h {
 	background: url(../img/header.jpg) no-repeat center top;
-	padding-top: 180px;
+	padding-top: 15%;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 700px;
+	min-height: 100%;
 	width: 100%;
 	color: white;
 	
