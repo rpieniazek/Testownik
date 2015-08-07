@@ -133,6 +133,7 @@ input {
 .subscribe-input {
 	float: center;
 	width: 100%;
+    color: black;
 	text-align: left;
 	margin-right: 2px;
 }
