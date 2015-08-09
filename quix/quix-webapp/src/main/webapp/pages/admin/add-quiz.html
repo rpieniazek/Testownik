@@ -26,16 +26,15 @@
                         <input class="form-control" type="text" th:field="*{questionString}" placeholder="Wpisz tu pytanie" />
                     </div>
 
-                    <!--                    <div th:each="answer : ${answers}" class="row">
-                         Odpowiedz1 
-
+                    <div th:each="answer : 50" class="row">
                         <div id="answer+index" style="display: none;">
                             <label>Odpowiedź:</label>
-                            <input class="form-control" type="text" th:field="*{answersString}" placeholder="Odpowiedź" />
+                            <input class="form-control" type="text"  placeholder="Odpowiedź" />
                         </div>
-                    </div>-->
-
-                    <div id="answer1">
+                    </div>
+<!--th:field="*{answersString[__${questionNum.index}__]}"-->
+                    
+                    <!-- <div id="answer1">
                         <label>Pytanie:</label>
                         <input class="form-control" type="text" th:field="*{answersString[0]}" placeholder="Odpowiedź">
                         </input>
@@ -58,11 +57,12 @@
                         <input class="form-control" type="text" th:field="*{answersString[3]}" placeholder="Odpowiedź">
                         </input>
                     </div>
-
+-->
 
                     <div>
                         <br/>
                         <input class="btn btn-default" type="submit" value="Zapisz" />
+                        <input class="btn btn-default" type="submit" value="Następne pytanie" />
                         <input class="btn btn-default" id="addAnswerButton" type="button" value="Dodaj odpowiedź" onclick="counter++; addAnswer('answer');" />
                     </div>
                 </div>
