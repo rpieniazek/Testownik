@@ -1,5 +1,6 @@
 package pl.etestownik.quix.model.question;
 
+import java.sql.Blob;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -24,6 +25,17 @@ import pl.etestownik.quix.model.quiz.Quiz;
 @Entity
 @Table(name="questions")
 public class Question {
+
+	public Question(){}
+	public Question(Content content){
+		this.content = content;
+	}
+	public Question(String text){
+		content = new Content(text);
+	}
+	public Question(Blob image){
+		content.setImage(image);
+	}
 	
 	@GeneratedValue
 	@Id
@@ -37,10 +49,10 @@ public class Question {
 	@JoinColumn(name="id_quiz")
 	private Quiz quiz;
 	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name="id_content")
 	@Getter
 	@Setter
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_content")
 	private Content content;
 	
 	@Getter
