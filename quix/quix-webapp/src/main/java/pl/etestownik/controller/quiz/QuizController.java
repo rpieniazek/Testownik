@@ -35,12 +35,12 @@ public class QuizController {
 		return new QuizForm();
 	}
 	
-	@RequestMapping(value = { "/quiz/new" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/admin/quiz/new" }, method = RequestMethod.GET)
 	public String newQuiz(Model model) {
-		return "add-quiz";
+		return "/admin/add-quiz";
 	}
 
-	@RequestMapping(value = { "/quiz/save" }, method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = { "/admin/quiz/save" }, method = {RequestMethod.POST, RequestMethod.GET})
 	public String saveQuiz(QuizForm quizForm) {
 		
 		//zapisujemy pytanie: 
@@ -66,6 +66,6 @@ public class QuizController {
 //		questionContent.setText(quizForm.getQuestion());
 		
 		//quizService.save(quiz.get);
-		return "add-quiz";
+		return "/admin/add-quiz";
 	}
 }

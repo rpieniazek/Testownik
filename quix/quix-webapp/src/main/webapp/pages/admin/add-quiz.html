@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorator="admin/template">
+
+<head>
+
+    <title>Dodawanie Pytania</title>
+
+    <script th:src="@{/js/addAnswer.js}"></script>
+</head>
+
+<body>
+    <div id="page-wrapper" class="main-container" layout:fragment="content">
+        <div class="col-lg-4">
+
+            <form th:action="@{/admin/quiz/save}" th:object="${quizForm}" method="post" role="form">
+                <div class="form-group">
+                    <!-- NazwaQuizu -->
+                    <div class="row">
+                        <label>Nazwa quizu</label>
+                        <input class="form-control" type="text" th:field="*{quiz.name}" placeholder="Wpisz tu cos" />
+                    </div>
+
+                    <!-- Pytanie -->
+                    <div class="row">
+                        <label>Pytanie</label>
+                        <input class="form-control" type="text" th:field="*{question.content.text}" placeholder="Wpisz tu pytanie" />
+                    </div>
+
+                    <div th:each="answer : ${answers}" class="row">
+                        <!-- Odpowiedz1 -->
+
+                        <div id="answer+index" style="display: none;">
+                            <label>Odpowiedź:</label>
+                            <input class="form-control" type="text" th:field="*{answer.content.text}" placeholder="Odpowiedź" />
+                        </div>
+                    </div>
+                    <!--  
+		<div id="answer2" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+			
+		</div>
+		<div id="answer3" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+		</div>
+		
+		<div id="answer4" style="display: none;">
+			<label>Pytanie:</label> <input type="text"
+				th:field="*{answer.content.text}" placeholder="Odpowiedź">
+			</input>
+		</div>
+
+ -->
+                    <div>
+                        <br/>
+                        <input class="btn btn-default" type="submit" value="Zapisz" />
+                        <input class="btn btn-default" id="addAnswerButton" type="button" value="Dodaj odpowiedź" onclick="counter++; addAnswer('answer');" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
