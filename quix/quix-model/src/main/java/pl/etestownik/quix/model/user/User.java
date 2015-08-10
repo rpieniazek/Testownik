@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,15 +32,19 @@ public class User {
 	
 	@Getter
 	@Setter
+	@Size(min=4, max=20, message = "Nazwa użytkownika musi mieć od 4 do 20 znaków")
 	private String username;
 	
 	@Getter
 	@Setter
+	@Size(min=4, max=20, message = "Hasło musi mieć od 4 do 20 znaków")
+	@Pattern(regexp= "^(?=.*[A-Z])(?=.*\\d).+$" , 
+		message = "Hasło musi się składać z przynajmniej jednej cyfry i dużej litery")
 	private String password;
 	
 	@Getter
 	@Setter
-	@Column(name="email",unique=true)
+	@Column(name="email", unique=true)
 	private String email;
 	
 	@Getter
@@ -47,6 +53,15 @@ public class User {
 	
 	@Getter
 	@Setter
+	private long registrationDate;
+	
+	@Getter
+	@Setter
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", targetEntity = UserRole.class)
 	private Set userRole = new HashSet(0);
+
+	public User(){
+		enabled = false;
+		registrationDate = System.currentTimeMillis();
+	}
 }
