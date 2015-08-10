@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pl.etestownik</groupId>
-  <artifactId>quix</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>quix</name>
-  <modules>
-    <module>quix-model</module>
-    <module>quix-repo</module>
-    <module>quix-service</module>
-    <module>quix-webapp</module>
-    <module>quix-i18n</module>
-  </modules>
-  
-  <profiles>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pl.etestownik</groupId>
+	<artifactId>quix</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>quix</name>
+	<modules>
+		<module>quix-model</module>
+		<module>quix-repo</module>
+		<module>quix-service</module>
+		<module>quix-webapp</module>
+		<module>quix-i18n</module>
+	</modules>
+
+	<profiles>
 		<profile>
 			<id>development</id>
 			<activation>
@@ -27,7 +28,7 @@
 				<jdbc.password>michalaibinkurwa</jdbc.password>
 				<jdbc.hibernate.dialect>org.hibernate.dialect.MySQLDialect</jdbc.hibernate.dialect>
 				<jdbc.hibernate.hbm2ddl.auto>update</jdbc.hibernate.hbm2ddl.auto>
-				<log4j.filepath.basedir/>
+				<log4j.filepath.basedir />
 				<log4j.console.treshold>OFF</log4j.console.treshold>
 				<log4j.i18n.treshold>DEBUG</log4j.i18n.treshold>
 				<log4j.util.treshold>DEBUG</log4j.util.treshold>
@@ -47,7 +48,7 @@
 				<jdbc.password>michalaibinkurwa</jdbc.password>
 				<jdbc.hibernate.dialect>org.hibernate.dialect.MySQLDialect</jdbc.hibernate.dialect>
 				<jdbc.hibernate.hbm2ddl.auto>update</jdbc.hibernate.hbm2ddl.auto>
-				<log4j.filepath.basedir/>
+				<log4j.filepath.basedir />
 				<log4j.console.treshold>OFF</log4j.console.treshold>
 				<log4j.i18n.treshold>DEBUG</log4j.i18n.treshold>
 				<log4j.util.treshold>DEBUG</log4j.util.treshold>
@@ -158,7 +159,12 @@
 			<artifactId>validation-api</artifactId>
 		</dependency>
 
-
+		<!-- Hibernate Validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.0.Final</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>

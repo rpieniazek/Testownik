@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:th="http://www.thymeleaf.org" layout:decorator="template">
 <head>
+<style>
+p.error {
+    color:red;
+}
+</style>
 
 <title>Rejestracja u篡tkownika</title>
 </head>
 <body>
 	<div class="main-container" layout:fragment="content">
-	<form action="#" th:object="${user}"
-		method="post">
+		<form action="#" th:object="${user}" method="post">
 
-		<!-- Nazwa u篡tkownika -->
-		<div>
-			<label>Nazwa u篡tkownika</label> <input type="text" th:field="*{username}"
-				placeholder="Username"></input>
-		</div>
-	
-		<!-- Has這 u篡tkownika -->
-		<div>
-			<label>Has這</label> <input type="password" th:field="*{password}"
-				placeholder="Password"></input>
-		</div>
-		
-		<!-- Mail u篡tkownika -->
-		<div>
-			<label>E-mail</label> <input type="text" th:field="*{email}"
-				placeholder="E-Mail"></input>
-		</div>
-	
-		<input type="submit" value="Dodaj" />
+			<!-- Nazwa u篡tkownika -->
+			<div>
+				<label>Nazwa u篡tkownika</label> <input type="text"
+					th:field="*{username}" placeholder="Username"></input>
+				<p class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Nieprawid這wa
+					nazwa u篡tkownika</p>
+			</div>
 
-	</form>
+			<!-- Has這 u篡tkownika -->
+			<div>
+				<label>Has這</label> <input type="password" th:field="*{password}"
+					placeholder="Password"></input>
+				<p class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Nieprawid這we
+					has這</p>
+			</div>
+
+			<!-- Mail u篡tkownika -->
+			<div>
+				<label>E-mail</label> <input type="text" th:field="*{email}"
+					placeholder="E-Mail"></input>
+				<p class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Nieprawid這wy
+					mail</p>
+			</div>
+
+			<input type="submit" value="Dodaj" />
+
+		</form>
 	</div>
 </body>
 </html>

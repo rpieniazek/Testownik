@@ -21,16 +21,16 @@ import pl.etestownik.quix.service.user.IUserService;
 @RequestMapping(value = { "/register" })
 class UserController {
 
+	@ModelAttribute(value="user")
+	public User user(){
+		return new User();
+	}
+	
 	@Autowired
 	private IUserService userService;
 
 	@Autowired
 	private IUserRoleService userRoleService;
-
-	@ModelAttribute("user")
-	public User user() {
-		return new User();
-	}
 
 	// przy ładowaniue url
 	@RequestMapping(method = RequestMethod.GET)
@@ -41,8 +41,9 @@ class UserController {
 	// po submicie
 	@RequestMapping(method = RequestMethod.POST)
 	private String onRegistered(@Valid User user, BindingResult result) {
+		System.out.println("Has errors="+result.hasErrors());
 		if (result.hasErrors()) {
-			return "kupa";
+			return "register";
 		} else {
 			userService.save(user);
 			UserRole userRole = new UserRole(user, "ROLE_USER");

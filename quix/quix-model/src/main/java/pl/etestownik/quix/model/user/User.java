@@ -45,6 +45,7 @@ public class User {
 	@Getter
 	@Setter
 	@Column(name="email", unique=true)
+	@Pattern(regexp = "[\\w-]+@([\\w-]+\\.)+[\\w-]+") 
 	private String email;
 	
 	@Getter

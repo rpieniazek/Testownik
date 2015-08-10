@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import pl.etestownik.quix.model.user.User;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
 
+@Repository
 public class UserRepo implements IBaseRepo<User> {
 
 	@Autowired
