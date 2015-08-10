@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorator="template">
+<head>
+
+<title>Rejestracja u¿ytkownika</title>
+</head>
+<body>
+	<div class="main-container" layout:fragment="content">
+	<form action="#" th:action="@{/registered}" th:object="${user}"
+		method="post">
+
+		<!-- Nazwa u¿ytkownika -->
+		<div>
+			<label>Nazwa u¿ytkownika</label> <input type="text" th:field="*{username}"
+				placeholder="Username"></input>
+		</div>
+	
+		<!-- Has³o u¿ytkownika -->
+		<div>
+			<label>Has³o</label> <input type="password" th:field="*{password}"
+				placeholder="Password"></input>
+		</div>
+		
+		<!-- Mail u¿ytkownika -->
+		<div>
+			<label>E-mail</label> <input type="text" th:field="*{email}"
+				placeholder="E-Mail"></input>
+		</div>
+	
+		<input type="submit" value="Dodaj" />
+
+	</form>
+	</div>
+</body>
+</html>
