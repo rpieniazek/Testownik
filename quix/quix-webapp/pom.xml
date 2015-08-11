@@ -6,8 +6,8 @@
 		<artifactId>quix</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	
-	
+
+
 	<groupId>pl.etestownik</groupId>
 	<artifactId>quix-webapp</artifactId>
 	<version>1.0-SNAPSHOT</version>
