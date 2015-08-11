@@ -23,6 +23,7 @@ public class VerificationTokenService implements IVerificationTokenService {
 		verificationTokenRepo.save(verificationToken);
 	}
 
+	@Transactional
 	@Override
 	public void delete(VerificationToken verificationToken) {
 		verificationTokenRepo.delete(verificationToken);

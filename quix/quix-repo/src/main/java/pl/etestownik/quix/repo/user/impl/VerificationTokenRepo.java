@@ -20,10 +20,12 @@ public class VerificationTokenRepo implements IVerificationTokenRepo {
 	SessionFactory session;
 	
 	@Override
+	@Transactional
 	public void save(VerificationToken entity) {
 		session.getCurrentSession().save(entity);
 	}
 
+	@Transactional
 	@Override
 	public void delete(VerificationToken entity) {
 		session.getCurrentSession().delete(entity);	

@@ -26,7 +26,7 @@ class UserController {
 
 	private static String subject = "Weryfikacja konta: ";
 	private static String body = "Aby zakończyć rejestrację kliknij w poniższy link:\n";
-	private static String address = "localhost:8070/verify?token="; // beka
+	private static String address = "http://localhost:8070/verify?token="; // beka
 
 	@ModelAttribute(value = "user")
 	public User user() {
@@ -59,8 +59,8 @@ class UserController {
 			return "register";
 		} else {
 			try {
-				sendVerificationToken(user);
 				userService.save(user);
+				sendVerificationToken(user);
 				UserRole userRole = new UserRole(user, "ROLE_USER");
 				userRoleService.save(userRole);
 				return "index";
