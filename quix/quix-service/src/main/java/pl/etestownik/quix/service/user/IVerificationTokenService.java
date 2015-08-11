@@ -16,4 +16,6 @@ public interface IVerificationTokenService {
 	
 	public List<VerificationToken> findAll();
 	
+	public VerificationToken getByToken(String token);
+	
 }

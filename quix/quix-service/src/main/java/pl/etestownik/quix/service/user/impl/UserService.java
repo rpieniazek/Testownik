@@ -28,6 +28,7 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
+	@Transactional
 	public void update(User entity) {
 		userRepo.update(entity);		
 	}

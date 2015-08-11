@@ -16,6 +16,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 
     <mvc:default-servlet-handler/>
 
+	
 
     <bean
             class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">

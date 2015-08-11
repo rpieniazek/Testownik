@@ -37,10 +37,14 @@ public class VerificationToken {
     @Setter
     private Long expireDate;
 
+    public VerificationToken(){
+    	expireDate = System.currentTimeMillis() + EXPIRATION;
+    }
+    
     public VerificationToken(String vToken, User usr){
+    	this();
     	token = vToken;
     	user = usr;
-    	expireDate = System.currentTimeMillis() + EXPIRATION;
     }
     
 }

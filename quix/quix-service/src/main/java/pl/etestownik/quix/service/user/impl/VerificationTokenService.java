@@ -8,13 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import pl.etestownik.quix.model.user.VerificationToken;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
+import pl.etestownik.quix.repo.user.IVerificationTokenRepo;
 import pl.etestownik.quix.service.user.IVerificationTokenService;
 
 @Service
 public class VerificationTokenService implements IVerificationTokenService {
 
 	@Autowired
-	private IBaseRepo<VerificationToken> verificationTokenRepo;
+	private IVerificationTokenRepo verificationTokenRepo;
 	
 	@Override
 	@Transactional
@@ -40,6 +41,12 @@ public class VerificationTokenService implements IVerificationTokenService {
 	@Override
 	public List<VerificationToken> findAll() {
 		return  verificationTokenRepo.findAll();
+	}
+
+	@Transactional
+	@Override
+	public VerificationToken getByToken(String token) {
+		return verificationTokenRepo.getByToken(token);
 	}
 	
 }

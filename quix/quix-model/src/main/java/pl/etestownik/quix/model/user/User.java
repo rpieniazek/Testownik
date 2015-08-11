@@ -34,6 +34,7 @@ public class User {
 	@Getter
 	@Setter
 	@Size(min = 4, max = 20, message = "Nazwa użytkownika musi mieć od 4 do 20 znaków")
+	@Column(unique = true)
 	private String username;
 
 	@Getter
