@@ -20,6 +20,16 @@ import pl.etestownik.quix.model.question.Question;
 @Table(name="contents")
 public class Content {
 
+	public Content(){}
+
+	public Content(String text){
+		this.text = text;
+	}
+
+	public Content(Blob image){
+		this.image = image;
+	}
+
 	@Getter
 	@GeneratedValue
 	@Id
@@ -32,5 +42,5 @@ public class Content {
 	
 	@Getter
 	@Setter
-	private String text;	
+	private String text;
 }

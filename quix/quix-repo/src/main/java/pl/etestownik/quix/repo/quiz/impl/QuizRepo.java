@@ -18,7 +18,6 @@ public class QuizRepo implements IBaseRepo<Quiz> {
 	
 	public void save(Quiz quiz) {
 		session.getCurrentSession().save(quiz);
-		session.getCurrentSession().flush();
 	}
 
 	public void delete(Quiz quiz) {
