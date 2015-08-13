@@ -16,4 +16,6 @@ public interface IUserService {
 	
 	public List<User> findAll();
 	
+	public void sendVerificationToken(User user);
+	
 }

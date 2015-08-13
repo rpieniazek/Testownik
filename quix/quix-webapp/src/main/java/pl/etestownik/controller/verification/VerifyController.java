@@ -30,7 +30,7 @@ public class VerifyController {
 		 */
 		if (verificationToken == null) {
 			System.out.println("Błędny token");
-			return "index";
+			return "bad_token";
 		}
 		/*
 		 * przedawniony token ta sytuacja nie powinna zajść, bo teoretycznie w
@@ -39,7 +39,7 @@ public class VerifyController {
 		 */
 		else if (verificationToken.getExpireDate() - System.currentTimeMillis() < 0) {
 			System.out.println("Przestarzały token");
-			return "index";
+			return "bad_token";
 		}
 		/*
 		 * wszystko gra, zmieniamy enabled usera i usuwamy token, żeby potem nie
@@ -50,7 +50,7 @@ public class VerifyController {
 			user.setEnabled(true);
 			userService.update(user);
 			verificationTokenService.delete(verificationToken);
-			return "index";
+			return "thx4verification";
 		}
 	}
 

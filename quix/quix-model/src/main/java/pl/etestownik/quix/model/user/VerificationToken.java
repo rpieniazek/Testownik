@@ -63,6 +63,10 @@ public class VerificationToken {
 		if (cal.get(Calendar.HOUR) >= 3) {
 			cal.add(Calendar.DATE, 2);
 			cal.set(Calendar.HOUR, 3);
+			cal.set(Calendar.MINUTE,0);
+			cal.set(Calendar.SECOND,0);
+			cal.set(Calendar.MILLISECOND,0);
+
 		}
 		/*
 		 * jeżeli token został utworzony (użytkownik się zarejestrował) przed
@@ -71,6 +75,9 @@ public class VerificationToken {
 		else {
 			cal.add(Calendar.DATE, 1);
 			cal.set(Calendar.HOUR, 3);
+			cal.set(Calendar.MINUTE,0);
+			cal.set(Calendar.SECOND,0);
+			cal.set(Calendar.MILLISECOND,0);
 		}
 		
 		return cal.getTimeInMillis();

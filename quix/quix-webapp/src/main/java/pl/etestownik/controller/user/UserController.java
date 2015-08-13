@@ -24,10 +24,6 @@ import pl.etestownik.quix.service.user.IVerificationTokenService;
 @RequestMapping(value = { "/register" })
 class UserController {
 
-	private static String subject = "Weryfikacja konta: ";
-	private static String body = "Aby zakończyć rejestrację kliknij w poniższy link:\n";
-	private static String address = "http://localhost:8070/verify?token="; // beka
-
 	@ModelAttribute(value = "user")
 	public User user() {
 		return new User();
@@ -38,12 +34,6 @@ class UserController {
 
 	@Autowired
 	private IUserRoleService userRoleService;
-
-	@Autowired
-	private IVerificationTokenService verificationTokenService;
-
-	@Autowired
-	private IMailService mailService;
 
 	// przy ładowaniue url
 	@RequestMapping(method = RequestMethod.GET)
@@ -60,28 +50,14 @@ class UserController {
 		} else {
 			try {
 				userService.save(user);
-				sendVerificationToken(user);
+				userService.sendVerificationToken(user);
 				UserRole userRole = new UserRole(user, "ROLE_USER");
 				userRoleService.save(userRole);
-				return "index";
+				return "thx4register";
 			} catch (Exception e) {
 				e.printStackTrace();
 				return "register";
 			}
 		}
 	}
-
-	/*
-	 * Trzeba w tym mailu pozmieniać jak już domena będzie, bo na locala wysyłać
-	 * to fail ;v I gdzieś na zewnątrz treść maila ogarnąć
-	 */
-	private void sendVerificationToken(User receiver) {
-		String token = UUID.randomUUID().toString();
-		mailService.sendMail(receiver.getEmail(), subject, body + address
-				+ token);
-		VerificationToken verificationToken = new VerificationToken(token,
-				receiver);
-		verificationTokenService.save(verificationToken);
-	}
-
 }
