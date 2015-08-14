@@ -30,7 +30,7 @@ public class QuizController {
     
     @RequestMapping(value = { "webFlowTest", "/webFlowTest" })
 	public String webFlowExample() {
-		return "add-quiz-flow";
+		return "/flows/adding-quiz/add-quiz-flow";
 	}
     
     @RequestMapping(value = {"/admin/quiz/new"}, method = RequestMethod.GET)
