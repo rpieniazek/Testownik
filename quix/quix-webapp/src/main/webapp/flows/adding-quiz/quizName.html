@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org" layout:decorator="admin/template">
+	xmlns:th="http://www.thymeleaf.org" layout:decorator="pages/admin/template">
 <head>
 
 <title>Dodawanie Pytania</title>
@@ -9,15 +9,14 @@
 </head>
 <body>
 	<div class="main-container" layout:fragment="content">
-
-		<form th:action="${flowExecutionUrl}" modelAttribute="order"
-			method="post">
+	<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}"
+		method="post">
 
 			<!-- NazwaQuizu -->
-			<div>
+		<!-- 	<div>
 				<label>Nazwa quizu</label> <input type="text"
-					th:field="*{quiz.name}"> </input>
-			</div>
+					th:field="*{quizForm.quiz.name}"> </input>
+			</div> -->
 
 			<input type="submit" value="Dodaj" />
  				<input type="submit" name="_eventId_addQuestion" value="Dodaj pierwsze pytanie" />

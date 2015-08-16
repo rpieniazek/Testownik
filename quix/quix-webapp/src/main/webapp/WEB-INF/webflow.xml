@@ -20,7 +20,7 @@ http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.x
 	</bean>
 
 	<webflow:flow-registry id="flowRegistry"
-		base-path="/flows" flow-builder-services="flowBuilderServices">
+		base-path="/flows/" flow-builder-services="flowBuilderServices">
 		<webflow:flow-location id="addQuiz"
 			path="/adding-quiz/add-quiz-flow.xml"/>
 
@@ -34,7 +34,7 @@ http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.x
 
 	<bean id="mvcViewFactoryCreator"
 		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
-		<property name="viewResolvers" ref="viewResolver" />
+		<property name="viewResolvers" ref="thymeleafViewResolver" />
 	</bean>
 
 

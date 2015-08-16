@@ -5,15 +5,15 @@
 	start-state="quizName">
 
 
-	<!-- <on-start>
-		<evaluate expression="quizController.form()" result="flowScope.quiz" />
-	</on-start> -->
+	
+		<!-- <evaluate result="flowScope.quiz" expression="quizController.form()"  />
+	 -->
 
-	<view-state id="quizName" view="/adding-quiz/quizName" model="quiz">
+	<view-state id="quizName" view="/flows/adding-quiz/quizName" >
 		<transition on="addQuestion" to="quizQuestion" />
 	</view-state>
 
-	<view-state id="quizQuestion" view="/adding-quiz/quizQuestion" model="quiz">
+	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion" >
 		<transition on="nextQuestion" to="quizQuestion" />
 		<transition on="finish" to="finish" />
 	</view-state>

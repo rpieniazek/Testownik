@@ -29,25 +29,27 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 	<!-- Thymeleaf konfiguracja resolverów: -->
 	<bean id="templateResolver"
 		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-		<property name="prefix" value="/pages/" />
+		<property name="prefix" value="/" /> <!-- tutaj zmiana,zeby mieć dostep do templatow tez z flows // wird shit, 
+			to jest taki 'home' dla controlera -->
 		<property name="suffix" value=".html" />
 		<property name="templateMode" value="HTML5" />
 		<property name="characterEncoding" value="UTF-8" />
 		<property name="cacheable" value="false" />
-		<property name="order" value="1"></property>
+		<property name="order" value="0"></property>
 	</bean>
-
-	<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+<!--
+	 <bean id="thymeleafViewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="templateEngine" />
 		<property name="characterEncoding" value="UTF-8" />
 		<property name="contentType" value="text/html; charset=UTF-8" />
-		<property name="order" value="0" />
+		<property name="order" value="1" />
 	</bean>
-
-	<!-- <bean id="thymeleafViewResolver" class="org.thymeleaf.spring4.view.AjaxThymeleafViewResolver"> 
-		<property name="viewClass" value="org.thymeleaf.spring4.view.FlowAjaxThymeleafView" 
-		/> <property name="templateEngine" ref="templateEngine" /> <property name="order" 
-		value="0" /> </bean> -->
+ -->
+	<bean id="thymeleafViewResolver" class="org.thymeleaf.spring4.view.AjaxThymeleafViewResolver">
+		<property name="viewClass"	value="org.thymeleaf.spring4.view.FlowAjaxThymeleafView" />
+		<property name="templateEngine" ref="templateEngine" />
+		<property name="order" value="1"></property>
+	</bean>
 
 
 	<bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
@@ -71,7 +73,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 		<property name="prefix" value="/flows" />
 		<property name="suffix" value=".html" />
 		<property name="order" value="2"></property>
-	</bean>
+	</bean> 
 
 
 </beans>

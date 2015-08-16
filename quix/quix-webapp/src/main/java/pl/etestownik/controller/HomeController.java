@@ -14,12 +14,12 @@ public class HomeController {
 	
 	@RequestMapping(value = { "admin", "/admin/" })
 	public String home() {
-		return "/admin/index";
+		return "pages/admin/index";
 	}
 
 	@RequestMapping(value = { "", "/" })
 	public String landingPage() {
-		return "index";
+		return "pages/index";
 	}
 	
 	
