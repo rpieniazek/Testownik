@@ -37,49 +37,13 @@ public class VerificationToken {
 	@Setter
 	private Long expireDate;
 
-	public VerificationToken() {
-		expireDate = calculateDate();
-	}
-
-	public VerificationToken(String vToken, User usr) {
+	public VerificationToken(){}
+	
+	public VerificationToken(String token, User user) {
 		this();
-		token = vToken;
-		user = usr;
+		this.token = token;
+		this.user = user;
 	}
 
-	/*
-	 * ustala, o której godzinie zostaną przedawnione tokeny co 24h serwis
-	 * będzie usuwał wszystkie dane użuytkownikó z przedawnionym tokenem na
-	 * wstepie przyjąłem, że czystka będzie o 3:01
-	 */
-	private long calculateDate() {
-		Calendar cal = Calendar.getInstance();
-
-		/*
-		 * jeżeli token został utworzony (użytkownik się zarejestrował) po
-		 * godzinie 3:00 to dajemy mu czas aż do pierwszej 3:00 po 24h (więc jak
-		 * user się zarejestruje o 4:00 to dostaje 47h)
-		 */
-		if (cal.get(Calendar.HOUR) >= 3) {
-			cal.add(Calendar.DATE, 2);
-			cal.set(Calendar.HOUR, 3);
-			cal.set(Calendar.MINUTE,0);
-			cal.set(Calendar.SECOND,0);
-			cal.set(Calendar.MILLISECOND,0);
-
-		}
-		/*
-		 * jeżeli token został utworzony (użytkownik się zarejestrował) przed
-		 * godziną 3:00 to dajemy mu czas 24h + różnica do 3:00 
-		 */
-		else {
-			cal.add(Calendar.DATE, 1);
-			cal.set(Calendar.HOUR, 3);
-			cal.set(Calendar.MINUTE,0);
-			cal.set(Calendar.SECOND,0);
-			cal.set(Calendar.MILLISECOND,0);
-		}
-		
-		return cal.getTimeInMillis();
-	}
+	
 }

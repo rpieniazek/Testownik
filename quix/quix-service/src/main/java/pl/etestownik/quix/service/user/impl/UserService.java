@@ -72,10 +72,10 @@ public class UserService implements IUserService {
 		String token = UUID.randomUUID().toString();
 		VerificationToken verificationToken = new VerificationToken(token,
 				receiver);
+		verificationTokenService.save(verificationToken);
 		String expirationDate = new SimpleDateFormat("dd.MM.yyyy 'o' HH:mm").format(new Date(verificationToken.getExpireDate()));
 		mailService.sendMail(receiver.getEmail(), subject, body_1 + address
 				+ token + body_2 + expirationDate);
-		verificationTokenService.save(verificationToken);
 	}
 
 }
