@@ -1,5 +1,6 @@
 package pl.etestownik.quix.model.quiz;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,6 +18,7 @@ import pl.etestownik.quix.model.question.Question;
 @Entity
 @Table(name="tests")
 public class Quiz {
+
 
 	@Getter
 	@GeneratedValue

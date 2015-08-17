@@ -1,5 +1,6 @@
 package pl.etestownik.quix.model.content;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.CascadeType;
@@ -19,7 +20,6 @@ import pl.etestownik.quix.model.question.Question;
 @Entity
 @Table(name="contents")
 public class Content {
-
 	public Content(){}
 
 	public Content(String text){

@@ -28,6 +28,10 @@ public class QuizController {
         return new QuizForm();
     }
     
+    @ModelAttribute("quiz")
+    public Quiz quiz(){
+    	return new Quiz();
+    }
     @RequestMapping(value = { "webFlowTest", "/webFlowTest" })
 	public String webFlowExample() {
 		return "/flows/adding-quiz/add-quiz-flow";

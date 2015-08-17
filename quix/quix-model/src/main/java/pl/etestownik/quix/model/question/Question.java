@@ -1,5 +1,6 @@
 package pl.etestownik.quix.model.question;
 
+import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Set;
 

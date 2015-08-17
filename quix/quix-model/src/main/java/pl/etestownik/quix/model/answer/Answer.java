@@ -7,13 +7,14 @@ import lombok.Setter;
 import pl.etestownik.quix.model.content.Content;
 import pl.etestownik.quix.model.question.Question;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 @Entity
 @Table(name = "answers")
 public class Answer {
 
-    public Answer() {
+	public Answer() {
     }
 
     public Answer(String text) {

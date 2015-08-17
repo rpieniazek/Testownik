@@ -10,28 +10,23 @@
 </head>
 <body>
 	<div class="main-container" layout:fragment="content">
-	<form action="#" th:action="@{/quiz/save}" th:object="${quizForm}"
-		method="post">
-
-		<!-- NazwaQuizu -->
-		<div>
-			<label>Nazwa quizu</label> <input type="text" th:field="*{quiz.name}"
-				placeholder="Wpisz tu cos"></input>
-		</div>
+		<form action="#" method="post" th:object="${quizForm}" th:action="${flowExecutionUrl}" > 
 
 		<!-- Pytanie -->
 		<div>
-			<label>Pytanie:</label> <input type="text"
-				th:field="*{question.content.text}" placeholder="Wpisz tu pytanie"></input>
+			<input type="hidden" name="_flowExecutionKey"
+			value="${flowExecutionKey}"/> 
+			
+				<input type="text" name="question"  placeholder="Wpisz tu pytanie"></input>
 		</div>
-		<div th:each="answer : ${answers}">
-			<!-- Odpowiedz1 -->
+		<!-- <div th:each="answer : ${answers}">
+			Odpowiedz1
 
 			<div id="answer+index" style="display: none;">
 				<label>Odpowiedź:</label> <input type="text"
 					th:field="*{answer.content.text}" placeholder="Odpowiedź"/>
 			</div>
-		</div>
+		</div> -->
 		<!--  
 		<div id="answer2" style="display: none;">
 			<label>Pytanie:</label> <input type="text"
@@ -52,9 +47,11 @@
 		</div>
 
  -->
-		<input id="addAnswerButton" type="button" value="+"
-			onclick="counter++; addAnswer('answer');" /> <input type="submit"
-			value="Dodaj" />
+		<!-- <input id="addAnswerButton" type="button" value="+"
+			onclick="counter++; addAnswer('answer');" /> -->
+			
+		<input type="submit" name="_eventId_nextQuestion" value="Dodaj nastepne pytanie" />
+		<input type="submit" name="_eventId_finish" value="Zakoncz" />
 
 	</form>
 	</div>
