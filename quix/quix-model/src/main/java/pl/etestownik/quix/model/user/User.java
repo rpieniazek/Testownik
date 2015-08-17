@@ -62,7 +62,7 @@ public class User {
 
 	@Getter
 	@Setter
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user", targetEntity = UserRole.class)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", targetEntity = UserRole.class)
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
 
 	public User() {

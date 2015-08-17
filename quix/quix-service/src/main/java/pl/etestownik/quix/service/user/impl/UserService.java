@@ -63,6 +63,7 @@ public class UserService implements IUserService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, getAuthorities(user));
 	}
 	
+	@Transactional
 	private Collection<? extends GrantedAuthority> getAuthorities(User user)
 	{
 		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();

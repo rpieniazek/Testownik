@@ -9,8 +9,12 @@
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<form-login login-page="/login" 
+		authentication-failure-url="/login?err"
+		username-parameter="username"
+		password-parameter="password"/>
+<!-- 		<csrf/> -->
 	</http>
-
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
