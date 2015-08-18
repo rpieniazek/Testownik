@@ -2,6 +2,7 @@ package pl.etestownik.quix.model.question;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -29,13 +29,18 @@ public class Question implements Serializable {
 
 	private static final long serialVersionUID = -6916223193866367859L;
 
-	public Question(){}
+	public Question(){
+		answers = new HashSet<Answer>();
+	}
+	
 	public Question(Content content){
 		this.content = content;
 	}
+	
 	public Question(String text){
 		content = new Content(text);
 	}
+	
 	public Question(Blob image){
 		content.setImage(image);
 	}

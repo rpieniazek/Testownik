@@ -1,6 +1,7 @@
 package pl.etestownik.quix.model.quiz;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -44,6 +45,8 @@ public class Quiz implements Serializable {
 	@OneToMany(mappedBy = "quiz", targetEntity = Question.class, cascade = CascadeType.ALL)
 	private Set<Question> questions;
 
-	public Quiz(){}
+	public Quiz(){
+		questions = new HashSet<>();
+	}
 	//TODO: User
 }

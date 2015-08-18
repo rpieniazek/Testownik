@@ -10,13 +10,17 @@
 </head>
 <body>
 	<div class="main-container" layout:fragment="content"   >
-		<form action="#" method="post" th:object="${quizForm}" th:action="${flowExecutionUrl}" > 
+		<form action="#" method="post" th:action="${flowExecutionUrl}" > 
 			
 			<input type="hidden" name="_flowExecutionKey"
 			value="${flowExecutionKey}"/> 
 			<label>Nazwa quizu</label>
-			<input type="text" name="quizName" /><br />
-			 <input	type="submit" name="_eventId_addQuestion" value="Dodaj pierwsze pytanie" />
+				<input type="text" name="quizName" /><br />
+			<label>Przedmiot</label>
+				<input type="text" name="quizSubject" /><br />
+			<label>Instytucja</label>
+				<input type="text" name="quizInstitution" /><br />
+			<input type="submit" name="_eventId_addQuestion" value="Dodaj pierwsze pytanie" />
 		</form>
 	</div>
 </body>
