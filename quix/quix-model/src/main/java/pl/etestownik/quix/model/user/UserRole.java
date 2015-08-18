@@ -40,6 +40,11 @@ public class UserRole {
 	@Setter
 	private String role;
 	
+	public UserRole()
+	{
+		
+	}
+	
 	public UserRole(User user, String role){
 		this.user = user;
 		this.role = role;

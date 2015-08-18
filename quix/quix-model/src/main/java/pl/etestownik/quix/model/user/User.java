@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.xml.ws.soap.Addressing;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -34,7 +35,7 @@ public class User {
 	@Getter
 	@Setter
 	@Size(min = 4, max = 20, message = "Nazwa użytkownika musi mieć od 4 do 20 znaków")
-	@Column(unique = true)
+	@Column(unique=true)
 	private String username;
 
 	@Getter
@@ -62,7 +63,7 @@ public class User {
 	@Getter
 	@Setter
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", targetEntity = UserRole.class)
-	private Set userRole = new HashSet(0);
+	private Set<UserRole> userRole = new HashSet<UserRole>(0);
 
 	public User() {
 		enabled = false;

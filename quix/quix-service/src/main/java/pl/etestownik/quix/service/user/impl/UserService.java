@@ -1,12 +1,13 @@
 package pl.etestownik.quix.service.user.impl;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,11 +18,11 @@ import pl.etestownik.quix.service.mail.IMailService;
 import pl.etestownik.quix.service.user.IUserService;
 import pl.etestownik.quix.service.user.IVerificationTokenService;
 
-@Service
+@Service("userService")
 public class UserService implements IUserService {
 
 	@Autowired
-	private IBaseRepo<User> userRepo;
+	private IUserRepo userRepo;
 	
 	@Autowired
 	private IMailService mailService;
@@ -76,6 +77,29 @@ public class UserService implements IUserService {
 		String expirationDate = new SimpleDateFormat("dd.MM.yyyy 'o' HH:mm").format(new Date(verificationToken.getExpireDate()));
 		mailService.sendMail(receiver.getEmail(), subject, body_1 + address
 				+ token + body_2 + expirationDate);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username)
+			throws UsernameNotFoundException 
+	{
+		User user = userRepo.getByUsername(username);
+		if(user == null)
+			throw new UsernameNotFoundException("User not registered.");
+		
+		
+		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, getAuthorities(user));
+	}
+	
+	@Transactional
+	private Collection<? extends GrantedAuthority> getAuthorities(User user)
+	{
+		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+		for(UserRole role: user.getUserRole())
+		{
+			authorities.add(new SimpleGrantedAuthority(role.getRole()));
+		}
+		return authorities;
 	}
 
 }
