@@ -1,20 +1,13 @@
 package pl.etestownik.quix.repo.user.impl;
 
-import java.util.List;
-
-import javax.persistence.QueryHint;
-import javax.transaction.Transactional;
-
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import pl.etestownik.quix.model.user.User;
-import pl.etestownik.quix.model.user.UserRole;
-import pl.etestownik.quix.repo.base_repo.IBaseRepo;
 import pl.etestownik.quix.repo.user.IUserRepo;
+
+import java.util.List;
 
 @Repository
 public class UserRepo implements IUserRepo {

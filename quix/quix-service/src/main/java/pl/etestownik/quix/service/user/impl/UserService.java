@@ -1,6 +1,7 @@
 package pl.etestownik.quix.service.user.impl;
 
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.etestownik.quix.model.user.User;
+import pl.etestownik.quix.model.user.UserRole;
 import pl.etestownik.quix.model.user.VerificationToken;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
+import pl.etestownik.quix.repo.user.IUserRepo;
 import pl.etestownik.quix.service.mail.IMailService;
 import pl.etestownik.quix.service.user.IUserService;
 import pl.etestownik.quix.service.user.IVerificationTokenService;
