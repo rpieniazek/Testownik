@@ -19,7 +19,10 @@ import pl.etestownik.quix.model.question.Question;
 
 @Entity
 @Table(name="contents")
-public class Content {
+public class Content implements Serializable {
+	
+	private static final long serialVersionUID = 6678411629811535216L;
+
 	public Content(){}
 
 	public Content(String text){

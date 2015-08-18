@@ -25,7 +25,9 @@ import pl.etestownik.quix.model.quiz.Quiz;
 
 @Entity
 @Table(name="questions")
-public class Question {
+public class Question implements Serializable {
+
+	private static final long serialVersionUID = -6916223193866367859L;
 
 	public Question(){}
 	public Question(Content content){

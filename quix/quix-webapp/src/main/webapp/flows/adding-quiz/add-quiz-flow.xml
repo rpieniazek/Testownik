@@ -14,21 +14,26 @@
 	</view-state>
 
 	 <action-state id="saveQuizName">
-		<evaluate expression="quizForm.quiz.name = requestParameters.quizName" />
-		<evaluate expression="quizService.save(quizForm.quiz)" />
+		<evaluate expression="quizForm.getQuiz.setName = requestParameters.quizName" />
+		<!--<evaluate expression="quizService.save(quizForm.quiz)" /> -->
 		<transition to="quizQuestion" />
 	</action-state> 
 
 	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
 		model="quizForm">
 		<transition on="nextQuestion" to="saveQuestion" />
-		<transition on="finish" to="finish" />
+		<transition on="finish" to="pre-finish" />
 	</view-state>
 
 	<action-state id="saveQuestion">
 		<evaluate expression="quizForm.questionString = requestParameters.question" />
 		<!-- <evaluate expression="quizService.save(quizForm.getQuiz())" /> -->
 		<transition to="quizQuestion" />
+	</action-state>
+
+	<action-state id="pre-finish">
+			<evaluate expression="quizService.save(quizForm.getQuiz())" />
+			<transition to="finish"/>
 	</action-state>
 
 	<end-state id="finish" view="/flows/adding-quiz/finish" />

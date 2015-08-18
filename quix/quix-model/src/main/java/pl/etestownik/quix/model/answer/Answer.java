@@ -12,7 +12,9 @@ import java.sql.Blob;
 
 @Entity
 @Table(name = "answers")
-public class Answer {
+public class Answer implements Serializable {
+
+	private static final long serialVersionUID = -4575839917270651051L;
 
 	public Answer() {
     }
