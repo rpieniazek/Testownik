@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import pl.etestownik.quix.model.user.User;
 
@@ -23,15 +24,19 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = { "/login", "/login/" }, method = RequestMethod.GET)
-	public String loginTo(Model model)
+	public ModelAndView loginTo(Model model, @RequestParam(value = "err", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout)
 	{
-		return "login";
-	}
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public String afterLogin(@RequestParam(value = "error", required = false) String error, 
-			User user, BindingResult result)
-	{		
-		return "index";
+		ModelAndView modelAndView = new ModelAndView();
+		if (error != null) {
+			modelAndView.addObject("error", "Zła nazwa użytkownika lub hasło!");
+		}
+
+		if (logout != null) {
+			modelAndView.addObject("msg", "Wylogowano pomyślnie.");
+		}
+		modelAndView.setViewName("login");
+
+		return modelAndView;
 	}
 }
