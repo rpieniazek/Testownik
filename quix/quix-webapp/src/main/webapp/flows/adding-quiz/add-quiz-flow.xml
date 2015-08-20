@@ -4,7 +4,6 @@
       http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 
 	<var name="quiz" class="pl.etestownik.quix.model.quiz.Quiz" />
-	<var name="question" class="pl.etestownik.quix.model.question.Questions" />
 	<!-- <on-start> <evaluate expression="quizController.form()" result="flowScope.quizForm" 
 		/> </on-start> -->
 
@@ -22,13 +21,13 @@
 	</action-state>
 
 	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
-		model="quizForm">
+		model="quiz">
 		<transition on="nextQuestion" to="saveQuestion" />
 		<transition on="finish" to="pre-finish" />
 	</view-state>
 
 	<action-state id="saveQuestion">
-		<evaluate expression="quizService.addQuestion(quiz,requestParameters.question)" />
+		<evaluate expression="quizService.addQuestion(quiz,requestParameters.question,requestParameters.answer_data)" />
 		<transition to="quizQuestion" />
 	</action-state>
 

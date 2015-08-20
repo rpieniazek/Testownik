@@ -34,14 +34,17 @@ public class Question implements Serializable {
 	}
 	
 	public Question(Content content){
+		this();
 		this.content = content;
 	}
 	
 	public Question(String text){
+		this();
 		content = new Content(text);
 	}
 	
 	public Question(Blob image){
+		this();
 		content.setImage(image);
 	}
 	

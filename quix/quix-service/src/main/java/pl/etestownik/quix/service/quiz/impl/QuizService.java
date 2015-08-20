@@ -60,7 +60,18 @@ public class QuizService implements IQuizService {
 	}
 
 	@Override
-	public void addQuestion(Quiz quiz, String question) {
-		quiz.getQuestions().add(new Question(question));
+	public void addQuestion(Quiz quiz, String question, String codedAnswers) {
+		Question q = new Question(question);
+		System.out.println("HUEHUEHE");
+		System.out.println(codedAnswers);
+		String[] answerData = codedAnswers.split("\\[\\^\\$\\&\\]");
+		for (int i = 0; i < answerData.length - 1; i+=2) {
+			if (answerData[i] != null && !answerData[i].isEmpty()) {
+				Answer a = new Answer(answerData[i]);
+				a.setCorrect(Boolean.valueOf(answerData[i + 1]));
+				q.getAnswers().add(a);
+			}
+		}
+		quiz.getQuestions().add(q);
 	}
 }

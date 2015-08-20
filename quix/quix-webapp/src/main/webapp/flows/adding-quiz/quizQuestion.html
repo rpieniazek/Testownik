@@ -1,59 +1,49 @@
 <!DOCTYPE html>
-<html lang="en"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org" layout:decorator="pages/admin/template">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="pages/admin/template">
 <head>
 
 <title>Dodawanie Pytania</title>
 
-<script th:src="@{/js/addAnswer.js}"></script>
+<script  type="text/javascript" th:src="@{/js/add-answer-2.js}"></script>
+
 </head>
 <body>
 	<div class="main-container" layout:fragment="content">
-		<form action="#" method="post" th:object="${quizForm}" th:action="${flowExecutionUrl}" > 
+		<form action="#" method="post" th:action="${flowExecutionUrl}">
 
-		<!-- Pytanie -->
-		<div>
-			<input type="hidden" name="_flowExecutionKey"
-			value="${flowExecutionKey}"/> 
-			
-				<input type="text" name="question"  placeholder="Wpisz tu pytanie"></input>
-		</div>
-		<!-- <div th:each="answer : ${answers}">
-			Odpowiedz1
-
-			<div id="answer+index" style="display: none;">
-				<label>Odpowiedź:</label> <input type="text"
-					th:field="*{answer.content.text}" placeholder="Odpowiedź"/>
+			<!-- Pytanie -->
+			<div>
+				<input type="hidden" name="_flowExecutionKey"
+					value="${flowExecutionKey}" />
+				<p>Pytanie</p>
+				<input type="text" name="question" placeholder="Wpisz tu pytanie"/>
 			</div>
-		</div> -->
-		
-		<div id="answer0" style="display: none;">
-			<label>Odpowiedz:</label> 
-				<input type="text" name="answer0"	 placeholder="Odpowiedź"/>
-		</div>
-		
-		<div id="answer1" style="display: none;">
-			<label>Odpowiedz:</label> 
-				<input type="text"	name="answer1" placeholder="Odpowiedź"/>
-		</div>
-		  
-		<div id="answer2" style="display: none;">
-			<label>Odpowiedz:</label> <input type="text"	name="answer2" placeholder="Odpowiedź"/>
-		</div>
-		
-		<div id="answer3" style="display: none;">
-			<label>Odpowiedz:</label> <input type="text"	name="answer3" placeholder="Odpowiedź"/>
-		</div>
-		
- 
-		<!--  <input id="addAnswerButton" type="button" value="Dodaj wincyj odpowiedzi"
-			onclick="counter++; addAnswer('answer');" />  -->
-			
-		<input type="submit" name="_eventId_nextQuestion" value="Dodaj nastepne pytanie" />
-		<input type="submit" name="_eventId_finish" value="Zakoncz" />
 
-	</form>
+			<div id="answers">
+				<p>Odpowiedzi:</p>
+				<div>
+					<input type="text" placeholder="Tu wpisz odpowied�"/>
+					<input type="checkbox" placeholder="Zaznacz czy poprawna"/>
+				</div>
+			</div>
+
+			<input id="addAnswerButton" type="button" value="Dodaj wincyj odpowiedzi"
+			onclick="addAnswer();" /> 
+			
+			<!-- <input id="checkButton" type="button" value="Obczajka"
+			onclick="getInputs();" /> -->
+			
+			<input type="button" onclick="getInputs();" value="gotowe"/>
+			
+			<input type="submit" name="_eventId_nextQuestion" value="Dodaj nastepne pytanie" />
+				
+			<input type="submit" name="_eventId_finish" value="Zakoncz" />
+			
+			<input type="hidden" name="answer_data"/>
+
+		</form>
 	</div>
 </body>
 </html>
