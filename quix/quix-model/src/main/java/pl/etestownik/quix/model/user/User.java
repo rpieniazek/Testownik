@@ -40,9 +40,9 @@ public class User {
 
 	@Getter
 	@Setter
-	@Size(min = 4, max = 20, message = "Hasło musi mieć od 4 do 20 znaków")
-	@Pattern(regexp = "^(?=.*[A-Z])(?=.*\\d).+$", 
-		message = "Hasło musi się składać z przynajmniej jednej cyfry i dużej litery")
+//	@Size(min = 4, max = 20, message = "Hasło musi mieć od 4 do 20 znaków")
+//	@Pattern(regexp = "^(?=.*[A-Z])(?=.*\\d).+$", 
+//		message = "Hasło musi się składać z przynajmniej jednej cyfry i dużej litery")
 	private String password;
 
 	@Getter

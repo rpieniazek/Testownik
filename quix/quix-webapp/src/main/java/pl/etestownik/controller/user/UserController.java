@@ -5,6 +5,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -49,6 +50,10 @@ class UserController {
 			return "register";
 		} else {
 			try {
+				BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder(10);
+				String cryptedPass = bcrypt.encode(user.getPassword());
+				System.out.println("Password bcrypted: " + cryptedPass);
+				user.setPassword(cryptedPass);
 				userService.save(user);
 				userService.sendVerificationToken(user);
 				UserRole userRole = new UserRole(user, "ROLE_USER");

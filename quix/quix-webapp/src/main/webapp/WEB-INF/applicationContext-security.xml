@@ -9,21 +9,23 @@
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-		<form-login login-page="/login" 
-		authentication-failure-url="/login?err"
-		username-parameter="username"
-		password-parameter="password"/>
+		<form-login login-page="/login" authentication-failure-url="/login?err"
+			username-parameter="username" password-parameter="password" />
 		<logout logout-success-url="/login" logout-url="/login?logout" />
-<!-- 		<csrf/> -->
+		<!-- <csrf/> -->
 	</http>
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
-		<!--	<user-service>
-				
-				  <user name="evelan" password="123456" authorities="ROLE_ADMIN" /> 
-			</user-service> -->
+			<!-- <user-service> <user name="evelan" password="123456" authorities="ROLE_ADMIN" 
+				/> </user-service> -->
+			<password-encoder ref="encoder" />
 		</authentication-provider>
 	</authentication-manager>
+
+	<beans:bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<beans:constructor-arg name="strength" value="10" />
+	</beans:bean>
 
 </beans:beans>

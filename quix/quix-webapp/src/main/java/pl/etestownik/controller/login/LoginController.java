@@ -24,7 +24,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = { "/login", "/login/" }, method = RequestMethod.GET)
-	public ModelAndView loginTo(Model model, @RequestParam(value = "err", required = false) String error,
+	public ModelAndView loginTo(User user, Model model, @RequestParam(value = "err", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout)
 	{
 		ModelAndView modelAndView = new ModelAndView();
