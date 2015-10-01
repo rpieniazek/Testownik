@@ -20,7 +20,6 @@
 		<transition to="quizQuestion" />
 	</action-state>
 
-
 	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
 		model="quiz">
 		<transition on="nextQuestion" to="saveQuestion" />
@@ -31,7 +30,6 @@
 		<evaluate expression="quizService.addQuestion(quiz,requestParameters.question,requestParameters.answer_data)" />
 		<transition to="quizQuestion" />
 	</action-state>
-
 
 	<action-state id="pre-finish">
 		<evaluate expression="quizService.save(quiz)" />

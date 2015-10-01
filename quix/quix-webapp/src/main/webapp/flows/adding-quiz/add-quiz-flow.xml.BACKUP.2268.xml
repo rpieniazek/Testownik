@@ -19,7 +19,16 @@
 				requestParameters.quizInstitution)" />
 		<transition to="quizQuestion" />
 	</action-state>
-
+<<<<<<< HEAD
+	
+	
+	 <subflow-state id="quizQuestionSubflow" subflow="add-question-flow"> 
+        <input name="quiz" value="quiz"/>
+		<transition on="" to="pre-finish"/>
+    </subflow-state>
+    
+   	
+=======
 
 	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
 		model="quiz">
@@ -32,7 +41,7 @@
 		<transition to="quizQuestion" />
 	</action-state>
 
-
+>>>>>>> 2b81af230eb3b4c7092faf8fc3e2421b02337f04
 	<action-state id="pre-finish">
 		<evaluate expression="quizService.save(quiz)" />
 		<transition to="finish" />

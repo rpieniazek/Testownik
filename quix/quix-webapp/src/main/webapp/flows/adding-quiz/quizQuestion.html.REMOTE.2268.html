@@ -6,33 +6,25 @@
 
 <title>Dodawanie Pytania</title>
 
-
 <script  type="text/javascript" th:src="@{/js/add-answer-2.js}"></script>
-
 
 </head>
 <body>
 	<div class="main-container" layout:fragment="content">
-
-
 		<form action="#" method="post" th:action="${flowExecutionUrl}">
-
 
 			<!-- Pytanie -->
 			<div>
 				<input type="hidden" name="_flowExecutionKey"
 					value="${flowExecutionKey}" />
 				<p>Pytanie</p>
-
 				<input type="text" name="question" placeholder="Wpisz tu pytanie"/>
-
 			</div>
 
 			<div id="answers">
 				<p>Odpowiedzi:</p>
 				<div>
-
-					<input type="text" placeholder="Tu wpisz odpowiedï¿½"/>
+					<input type="text" placeholder="Tu wpisz odpowied¿"/>
 					<input type="checkbox" placeholder="Zaznacz czy poprawna"/>
 				</div>
 			</div>
@@ -50,7 +42,6 @@
 			<input type="submit" name="_eventId_finish" value="Zakoncz" />
 			
 			<input type="hidden" name="answer_data"/>
-
 
 		</form>
 	</div>

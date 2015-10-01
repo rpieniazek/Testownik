@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="pages/admin/template">
+<head>
+
+<title>Dodawanie Pytania</title>
+
+<script  type="text/javascript">
+function addAnswer(){
+	var container = document.getElementById("answers");
+	var count = container.children.length - 1;
+	for(i=0;i<4;i++){
+		var answerDiv = document.createElement("div");
+		var answerInput = document.createElement("input");
+		var current = count+i+1;
+		answerInput.type = "text";
+		answerInput.name = "answer-"+current;
+		answerInput.placeholder = "Wpisz tu odpowiedź";
+		var answerCheck = document.createElement("input");
+		answerCheck.type = "checkbox";
+		answerCheck.name = "check-"+current;
+		answerCheck.placeholder = "Wpisz tu odpowiedź";
+		answerDiv.appendChild(answerInput);
+		answerDiv.appendChild(answerCheck);
+		container.appendChild(answerDiv);
+		document.getElementById("answerCounter").value = current;
+	}
+}
+</script>
+
+</head>
+<body>
+	<div class="main-container" layout:fragment="content">
+		<form action="#" method="post" th:object="${quizForm}"
+			th:action="${flowExecutionUrl}">
+
+			<!-- Pytanie -->
+			<div>
+				<input type="hidden" name="_flowExecutionKey"
+					value="${flowExecutionKey}" />
+				<p>Pytanie</p>
+				<input type="text" name="question" placeholder="Wpisz tu pytanie"></input>
+			</div>
+
+			<div id="answers">
+				<p>Odpowiedzi:</p>
+				<div>
+					<input type="text" name="answer-1" placeholder="Tu wpisz odpowiedż">
+					<input type="checkbox" name="check-1"
+						placeholder="Zaznacz czy poprawna">
+				</div>
+			</div>
+			<input type="hidden" name="answerCounter" id="answerCounter"
+					value="" />
+			<input id="addAnswerButton" type="button" value="Dodaj wincyj odpowiedzi"
+			onclick="addAnswer();" /> 
+				
+			<input type="submit" name="_eventId_nextQuestion"
+				value="Dodaj nastepne pytanie" /> <input type="submit"
+				name="_eventId_finish" value="Zakoncz" />
+
+		</form>
+	</div>
+</body>
+</html>

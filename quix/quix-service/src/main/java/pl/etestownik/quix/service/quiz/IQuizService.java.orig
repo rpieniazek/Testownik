@@ -19,8 +19,12 @@ public interface IQuizService {
 	
 	public void setDetails(Quiz quiz, String name, String subject, String institution);
 	
+<<<<<<< HEAD
+	public void addQuestion(Quiz quiz, String question);
+
+
+
+=======
 	public void addQuestion(Quiz quiz, String question, String codedAnswers);
-
-
-
+>>>>>>> 2b81af230eb3b4c7092faf8fc3e2421b02337f04
 }
