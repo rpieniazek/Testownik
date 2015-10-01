@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<input name="quiz" required="true"/>
+	<var name="" class=""/>
+	
+	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
+		model="quizForm">
+		<on-entry>
+			<set name="flowScope.question" value="pl.etestownik.quix.model.question.Question(requestParameters.question)"/>
+		</on-entry>
+
+		<transition on="nextQuestion" to="saveQuestion" >
+			<evaluate expression="requestParameters.answerCounter" result="flowScope.answerCounter" />
+		</transition>
+		
+		<transition on="finish" to="pre-finish" />
+	</view-state>
+
+	<action-state id="saveQuestion">
+		<evaluate expression="answer = requestParameters.answer#counter"></evaluate>
+		<transition to="checkAnswer" />
+	</action-state>
+
+	<decision-state id="checkAnswer">
+        <if test="requestParameters.answer!=null" then="createAddress" else="editAddress" />
+    </decision-state>
+	
+	<action-state id="saveAnswer">
+		<evaluate expression="quizService.addQuestion(quiz,requestParameters.question)" />
+		<transition to="quizQuestion" />
+	</action-state>
+	
+	<end-state id="quizQuestion"> 
+        <output name="quiz" value="quiz"/>
+    </end-state>
+	
+</flow>
+       

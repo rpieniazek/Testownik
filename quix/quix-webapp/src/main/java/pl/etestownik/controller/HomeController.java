@@ -19,6 +19,7 @@ public class HomeController {
 
 	@RequestMapping(value = { "", "/" })
 	public String landingPage() {
+		log.debug("HomeController reached!");
 		return "pages/index";
 	}
 	

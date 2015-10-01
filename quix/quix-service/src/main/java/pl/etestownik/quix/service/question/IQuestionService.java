@@ -15,4 +15,7 @@ public interface IQuestionService {
 	public Question getById (long id);
 	
 	public List<Question> findAll();
+	
+	public void addAnswer(Question question, String answer);
+	
 }

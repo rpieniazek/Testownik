@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pl.etestownik.quix.model.answer.Answer;
 import pl.etestownik.quix.model.question.Question;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;
 import pl.etestownik.quix.service.question.IQuestionService;
@@ -38,6 +39,11 @@ public class QuestionService implements IQuestionService {
 	@Override
 	public List<Question> findAll() {
 		return questionRepo.findAll();
+	}
+
+	@Override
+	public void addAnswer(Question question, String answer) {
+		question.getAnswers().add(new Answer(answer));
 	}
 
 }

@@ -20,4 +20,7 @@ public interface IQuizService {
 	public void setDetails(Quiz quiz, String name, String subject, String institution);
 	
 	public void addQuestion(Quiz quiz, String question);
+
+
+
 }
