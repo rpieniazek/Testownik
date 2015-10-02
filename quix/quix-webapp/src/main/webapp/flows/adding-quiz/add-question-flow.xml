@@ -5,7 +5,7 @@
                           http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<input name="quiz" required="true"/>
-	<var name="" class=""/>
+	
 	
 	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
 		model="quizForm">
@@ -34,9 +34,7 @@
 		<transition to="quizQuestion" />
 	</action-state>
 	
-	<end-state id="quizQuestion"> 
-        <output name="quiz" value="quiz"/>
-    </end-state>
+	
 	
 </flow>
        
