@@ -1,0 +1,43 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+
+	<var name="quiz" class="pl.etestownik.quix.model.quiz.Quiz" />
+	<!-- <on-start> <evaluate expression="quizController.form()" result="flowScope.quizForm" 
+		/> </on-start> -->
+
+	<view-state id="quizDetails" view="/flows/adding-quiz/quizDetails"
+		model="quiz">
+		<transition on="addQuestion" to="saveQuizDetails">
+		</transition>
+	</view-state>
+
+	<action-state id="saveQuizDetails">
+		<evaluate
+			expression="quizService.setDetails(quiz,requestParameters.quizName,requestParameters.quizSubject,
+				requestParameters.quizInstitution)" />
+		<transition to="quizQuestion" />
+	</action-state>
+
+
+	<view-state id="quizQuestion" view="/flows/adding-quiz/quizQuestion"
+		model="quiz">
+		<transition on="nextQuestion" to="saveQuestion" />
+		<transition on="finish" to="pre-finish" />
+	</view-state>
+
+	<action-state id="saveQuestion">
+		<evaluate expression="quizService.addQuestion(quiz,requestParameters.question,requestParameters.answer_data)" />
+		<transition to="quizQuestion" />
+	</action-state>
+
+
+	<action-state id="pre-finish">
+		<evaluate expression="quizService.save(quiz)" />
+		<transition to="finish" />
+	</action-state>
+
+	<end-state id="finish" view="/flows/adding-quiz/finish" />
+
+</flow>

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import pl.etestownik.controller.quiz.form.QuizForm;
 import pl.etestownik.quix.model.answer.Answer;
 import pl.etestownik.quix.model.question.Question;
@@ -26,7 +27,16 @@ public class QuizController {
     public QuizForm form() {
         return new QuizForm();
     }
-
+    
+    @ModelAttribute("quiz")
+    public Quiz quiz(){
+    	return new Quiz();
+    }
+    @RequestMapping(value = { "webFlowTest", "/webFlowTest" })
+	public String webFlowExample() {
+		return "/flows/adding-quiz/add-quiz-flow";
+	}
+    
     @RequestMapping(value = {"/admin/quiz/new"}, method = RequestMethod.GET)
     public String newQuiz(Model model) {
         return "/admin/add-quiz";
@@ -37,8 +47,8 @@ public class QuizController {
 
         //ustawiam odpowiedzi
         Set<Answer> answers = new HashSet<>();
-        for (String s : quizForm.getAnswersString())
-            answers.add(new Answer(s));
+      //  for (String s : quizForm.getAnswersString())
+        //    answers.add(new Answer(s));
 
         //ustawaiam pytanie
         Set<Question> questionsSet = new HashSet<>();

@@ -1,5 +1,7 @@
 package pl.etestownik.quix.model.quiz;
 
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,7 +18,9 @@ import pl.etestownik.quix.model.question.Question;
 
 @Entity
 @Table(name="tests")
-public class Quiz {
+public class Quiz implements Serializable {
+
+	private static final long serialVersionUID = 2424560469586575788L;
 
 	@Getter
 	@GeneratedValue
@@ -41,6 +45,8 @@ public class Quiz {
 	@OneToMany(mappedBy = "quiz", targetEntity = Question.class, cascade = CascadeType.ALL)
 	private Set<Question> questions;
 
-	public Quiz(){}
+	public Quiz(){
+		questions = new HashSet<>();
+	}
 	//TODO: User
 }

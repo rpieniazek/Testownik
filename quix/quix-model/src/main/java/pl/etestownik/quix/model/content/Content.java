@@ -1,5 +1,6 @@
 package pl.etestownik.quix.model.content;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.CascadeType;
@@ -18,7 +19,9 @@ import pl.etestownik.quix.model.question.Question;
 
 @Entity
 @Table(name="contents")
-public class Content {
+public class Content implements Serializable {
+	
+	private static final long serialVersionUID = 6678411629811535216L;
 
 	public Content(){}
 

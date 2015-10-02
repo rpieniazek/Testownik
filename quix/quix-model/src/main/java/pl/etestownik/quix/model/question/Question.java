@@ -1,6 +1,8 @@
 package pl.etestownik.quix.model.question;
 
+import java.io.Serializable;
 import java.sql.Blob;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -24,16 +25,26 @@ import pl.etestownik.quix.model.quiz.Quiz;
 
 @Entity
 @Table(name="questions")
-public class Question {
+public class Question implements Serializable {
 
-	public Question(){}
+	private static final long serialVersionUID = -6916223193866367859L;
+
+	public Question(){
+		answers = new HashSet<Answer>();
+	}
+	
 	public Question(Content content){
+		this();
 		this.content = content;
 	}
+	
 	public Question(String text){
+		this();
 		content = new Content(text);
 	}
+	
 	public Question(Blob image){
+		this();
 		content.setImage(image);
 	}
 	

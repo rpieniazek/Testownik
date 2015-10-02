@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="pages/admin/template">
+<head>
+
+<title>Dodawanie Pytania</title>
+
+
+<script  type="text/javascript" th:src="@{/js/add-answer-2.js}"></script>
+
+
+</head>
+<body>
+	<div class="main-container" layout:fragment="content">
+
+
+		<form action="#" method="post" th:action="${flowExecutionUrl}">
+
+			<!-- Pytanie -->
+			<div>
+				<input type="hidden" name="_flowExecutionKey"
+					value="${flowExecutionKey}" />
+				<p>Pytanie</p>
+
+				<input type="text" name="question" placeholder="Wpisz tu pytanie"/>
+
+			</div>
+
+			<div id="answers">
+				<p>Odpowiedzi:</p>
+				<div>
+
+					<input type="text" placeholder="Tu wpisz odpowied�"/>
+					<input type="checkbox" placeholder="Zaznacz czy poprawna"/>
+				</div>
+			</div>
+
+			<input id="addAnswerButton" type="button" value="Dodaj wincyj odpowiedzi"
+			onclick="addAnswer();" /> 
+			
+			<!-- <input id="checkButton" type="button" value="Obczajka"
+			onclick="getInputs();" /> -->
+			
+			<input type="button" onclick="getInputs();" value="gotowe"/>
+			
+			<input type="submit" name="_eventId_nextQuestion" value="Dodaj nastepne pytanie" />
+				
+			<input type="submit" name="_eventId_finish" value="Zakoncz" />
+			
+			<input type="hidden" name="answer_data"/>
+
+
+		</form>
+	</div>
+</body>
+</html>
