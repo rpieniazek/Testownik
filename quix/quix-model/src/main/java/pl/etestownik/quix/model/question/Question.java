@@ -30,7 +30,7 @@ public class Question implements Serializable {
 	private static final long serialVersionUID = -6916223193866367859L;
 
 	public Question(){
-		answers = new HashSet<Answer>();
+		answers = new HashSet<>();
 	}
 	
 	public Question(Content content){

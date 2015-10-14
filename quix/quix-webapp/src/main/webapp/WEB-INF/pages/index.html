@@ -1,0 +1,59 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <link rel="icon" th:href="@{/img/favicon.ico}"/>
+
+  <title>eTestownik</title>
+
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css"  href="../../css/rafal.css" />
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/ionicons.min.css}" rel="stylesheet" type="text/css"/>
+  <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script th:src="@{/js/ie10-viewport-bug-workaround.js}"></script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div id="h">
+  <div class="logo">eTestownik.pl</div>
+  <div class="social hidden-xs">
+    <a href="#"><i class="ion-social-twitter"></i></a>
+    <a href="#"><i class="ion-social-instagram"></i></a>
+    <a href="#"><i class="ion-social-facebook"></i></a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 centered">
+        <h1>Tutaj jakiś inspirujący tekst<br></br>A tu poemat o naszej zajebistości</h1>
+        <div class="mtb">
+          <form role="form" action="register.php" method="post" enctype="plain">
+            <input type="text" class="subscribe-input" placeholder="Wyszukaj testy..."/>
+            <button class='btn btn-conf btn-green' type="submit">Znajdź</button>
+          </form>
+        </div><!--/mt-->
+        <h6>GDZIE NASZE STO MILIONUF</h6>
+      </div>
+    </div><!--/row-->
+  </div><!--/container-->
+</div><!-- /H -->
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/retina-1.1.0.js}"></script>
+</body>
+</html>

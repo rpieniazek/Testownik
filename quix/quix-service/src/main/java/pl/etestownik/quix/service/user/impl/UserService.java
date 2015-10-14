@@ -5,6 +5,7 @@ import java.util.*;
 
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,6 +23,7 @@ import pl.etestownik.quix.service.user.IUserService;
 import pl.etestownik.quix.service.user.IVerificationTokenService;
 
 @Service("userService")
+
 public class UserService implements IUserService {
 
 	@Autowired
