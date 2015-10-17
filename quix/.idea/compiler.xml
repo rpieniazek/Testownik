@@ -55,11 +55,11 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="quix" target="1.5" />
-      <module name="quix-i18n" target="1.7" />
-      <module name="quix-model" target="1.7" />
-      <module name="quix-repo" target="1.7" />
-      <module name="quix-service" target="1.7" />
-      <module name="quix-webapp" target="1.7" />
+      <module name="quix-i18n" target="1.8" />
+      <module name="quix-model" target="1.8" />
+      <module name="quix-repo" target="1.8" />
+      <module name="quix-service" target="1.8" />
+      <module name="quix-webapp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
