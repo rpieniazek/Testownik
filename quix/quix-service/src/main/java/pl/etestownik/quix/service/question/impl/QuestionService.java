@@ -2,11 +2,11 @@ package pl.etestownik.quix.service.question.impl;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import org.springframework.transaction.annotation.Transactional;
 import pl.etestownik.quix.model.answer.Answer;
 import pl.etestownik.quix.model.question.Question;
 import pl.etestownik.quix.repo.base_repo.IBaseRepo;

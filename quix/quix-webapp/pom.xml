@@ -8,7 +8,6 @@
 	</parent>
 
 
-	<groupId>pl.etestownik</groupId>
 	<artifactId>quix-webapp</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>quix-webapp</name>
@@ -85,11 +84,6 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
-            <groupId>org.springframework.webflow</groupId> 
-            <artifactId>spring-webflow</artifactId> 
-            <version>2.4.0.RELEASE</version> 
-        </dependency>
         <dependency>
             <groupId>jstl</groupId> 
             <artifactId>jstl</artifactId> 
@@ -141,8 +135,13 @@
 		<!-- Thymeleaf Sprin Security dialect: -->
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
-			<artifactId>thymeleaf-extras-springsecurity3</artifactId>
-			<version>2.1.1.RELEASE</version>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+			<version>${thymeleaf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 

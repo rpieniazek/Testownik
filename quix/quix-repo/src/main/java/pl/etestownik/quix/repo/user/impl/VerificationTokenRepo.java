@@ -2,7 +2,6 @@ package pl.etestownik.quix.repo.user.impl;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -10,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import org.springframework.transaction.annotation.Transactional;
 import pl.etestownik.quix.model.user.VerificationToken;
 import pl.etestownik.quix.repo.user.IVerificationTokenRepo;
 
